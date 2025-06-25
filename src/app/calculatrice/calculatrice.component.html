@@ -1,0 +1,62 @@
+<!-- Champs sans formulaire
+
+<input [(ngModel)]="number1" type="number" />
+<select [(ngModel)]="operation">
+  <option>+</option>
+  <option>-</option>
+  <option>/</option>
+  <option>*</option>
+</select>
+<input [(ngModel)]="number2" type="number" />
+<button (click)="calculate()" type="submit">Calculer</button>
+<p>{{ text_result }} {{ result }}</p>!-->
+
+<!-- Avec formulaire et ngModel-->
+
+<!-- <form [formGroup]="formGroup" (ngSubmit)="calculate()">
+  <input
+    [(ngModel)]="number1"
+    [ngModelOptions]="{ standalone: true }"
+    type="number"
+  />
+  <select [(ngModel)]="operation" [ngModelOptions]="{ standalone: true }">
+    @for (item of tableau_operations; track item; ) {
+    <option>{{ item }}</option>
+    }
+  </select>
+  <input
+    [(ngModel)]="number2"
+    [ngModelOptions]="{ standalone: true }"
+    type="number"
+  />
+  <button type="submit">Calculer</button>
+  <span>{{ text_result }} {{ result }}</span>
+</form>-->
+
+<form [formGroup]="formGroup" (ngSubmit)="calculate()">
+  <input formControlName="number1" type="number" />
+  <select formControlName="operation">
+    @for (item of tableau_operations; track item; ) {
+    <option>{{ item }}</option>
+    }
+  </select>
+  <input formControlName="number2" type="number" />
+  <button type="submit">Calculer</button>
+  <span [ngClass]="{ positif: result > 0, negatif: result < 0 }">
+    {{ text_result }} {{ result }}
+  </span>
+</form>
+
+<div class="container">
+  <div class="grid">
+    @for (item of tableau_numbers; track item; ) {
+    <button>{{ item }}</button>
+    }
+    <button class="equal">=</button>
+  </div>
+  <div class="flex">
+    @for (item of tableau_operations; track item; ) {
+    <button>{{ item }}</button>
+    }
+  </div>
+</div>

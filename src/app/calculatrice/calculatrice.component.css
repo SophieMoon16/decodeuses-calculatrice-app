@@ -1,0 +1,43 @@
+.positif {
+  color: green;
+}
+
+.negatif {
+  color: red;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  flex-direction: column;
+  width: 90%;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  padding: 5rem;
+  justify-content: center;
+}
+
+.equal {
+  grid-column: 2/4;
+}
+
+button {
+  padding: 1rem;
+  margin: 0.3rem;
+  background-color: white;
+  border-style: solid;
+  border-color: lightgray;
+  border-width: 0.03rem;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
