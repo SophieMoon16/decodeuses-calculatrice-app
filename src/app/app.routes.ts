@@ -3,7 +3,7 @@ import { CalculatriceComponent } from './calculatrice/calculatrice.component';
 
 export const routes: Routes = [
   {
-    path: 'calculatrice',
+    path: '',
     title: 'Calculatrice',
     component: CalculatriceComponent,
   },
